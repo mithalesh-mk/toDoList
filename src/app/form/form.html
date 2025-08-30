@@ -1,0 +1,21 @@
+<div class="ToDoApp">
+    <h1>ToDo App</h1>
+    
+    <div class="form">
+        <h2>Welcome to our App</h2>
+        <input [(ngModel)] = "taskName" type="text" placeholder="What do you want to do?"/>
+        <button (click)="handleSubmit()">Add</button>
+    </div>
+    
+    <div class="userlist">
+        <h2>List of Tasks</h2>
+        <ul class="userlisting">
+            <li *ngFor="let task of tasks; let index = index">
+                <span class="taskname"> {{ task.taskName }} </span>
+                <span class="deletetask" (click)="handleDelete(index)"> X </span>
+                <span class="strike" (click)="handleStrike(index)"> Strike </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
